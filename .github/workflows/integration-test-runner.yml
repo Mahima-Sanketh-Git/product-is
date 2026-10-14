@@ -41,6 +41,14 @@ jobs:
         with:
           java-version: "21"
           distribution: "temurin"
+      - name: Set up Maven 3.9.16
+        uses: stCarolas/setup-maven@v5
+        with:
+          maven-version: '3.9.16'
+      - name: Check Java and Maven versions
+        run: |
+          java -version
+          mvn --version
       - name: Echo java 21 home
         run: |
           echo "J21HOME=$JAVA_HOME" >> ${GITHUB_ENV}
